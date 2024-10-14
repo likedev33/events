@@ -21,10 +21,10 @@ var db = require('./models');
 var dbs = require('./models').db;
 // Imports routes
 const authRoute = require('./routes/auth');
-const equipeCommandeRoute = require('./routes/equipeCommande');
-const effectifRoute = require('./routes/effectif');
+// const equipeCommandeRoute = require('./routes/equipeCommande');
+// const effectifRoute = require('./routes/effectif');
 // const ServerSSE = require('./sse');
-const connectDB = require('./config/db');
+// const connectDB = require('./config/db');
 var app = express();
 
 app.use(express.static('public'));
