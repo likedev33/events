@@ -16,9 +16,9 @@ const CERT_DIR = `${__dirname}/cert`;
 
 
 var jwtUtils = require('./utils/jwt.utils');
-var models = require('./models');
-var db = require('./models');
-var dbs = require('./models').db;
+// var models = require('./models');
+// var db = require('./models');
+// var dbs = require('./models').db;
 // Imports routes
 const authRoute = require('./routes/auth');
 // const equipeCommandeRoute = require('./routes/equipeCommande');

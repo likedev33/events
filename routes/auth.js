@@ -4,10 +4,9 @@ var express =  require('express');
 
 var bcrypt = require('bcryptjs');
 var jwtUtils = require('../utils/jwt.utils');
-var models = require('../models');
-var db = require('../models');
-var dbs = require('../models').db;
-
+// var models = require('../models');
+// var db = require('../models');
+// var dbs = require('../models').db;
 
 // Constants
 const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -86,10 +85,17 @@ router.post('/register',  (req, res, next) => {
     // }); // fin de then(function(userFound)    
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
 
     var username       = req.body.username;
     var password    = req.body.password;
+    var userFound = { 'id': 1, 'isAdmin': 1 };
+        return await res.status(200).json({
+              'id': userFound.id,
+              'username': userFound.username,
+              'email': userFound.email,
+              'token': jwtUtils.generateTokenForUser(userFound),
+            });
 
     // if (username == null || password == null) {
     //     return res.status(400).json({'error' : 'missing parameters'});
