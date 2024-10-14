@@ -51,7 +51,7 @@ app.use((req, res, next) => {
       res.send();
   });
 });
-app.use(sse());
+// app.use(sse());
 app.use('/api/users', authRoute);
 
 // ****** fin de récupération des affectations déjà saisies***********************************
