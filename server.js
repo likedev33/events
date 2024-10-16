@@ -56,7 +56,7 @@ app.use('/api/users', authRoute);
 
 // ****** fin de récupération des affectations déjà saisies***********************************
 
-app.get('/', (_, res) => {
+app.get('/', (req, res) => {
     res.send('Hello world');
   });
   
@@ -69,9 +69,9 @@ server = spdy.createServer(
   );
 
 const port = 5000; // process.env.port || 8082;
-
+const host = '0.0.0.0';
  // Launch server
- server.listen(port, function() {
+ app.listen(port,  function() {
      console.log('Server en écoute on port :', port); // console.log(process.env);
  });
 

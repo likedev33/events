@@ -86,7 +86,7 @@ router.post('/register',  (req, res, next) => {
 });
 
 router.post('/login', async (req, res) => {
-
+    console.log("login")
     var username       = req.body.username;
     var password    = req.body.password;
     var userFound = { 'id': 1, 'isAdmin': 1 };
